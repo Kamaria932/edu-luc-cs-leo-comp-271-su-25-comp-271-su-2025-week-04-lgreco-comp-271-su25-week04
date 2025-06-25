@@ -82,10 +82,17 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
      public boolean contains(String value) {
         return indexOf(value) != NOT_FOUND;
     }
-
+/* */
     // implement the comparable interface
     public int compareTo(DoubleLinkedList other) {
-
-
+            int diff = 0;  // assume they are equal
+            if (other != null) {  // Check if other is null. If it is do not touch.
+                diff = this.getSize() - other.getSize(); //Difference in total node counts.
+        }
+        return diff;
+    }
+ public String toString() {
+        return "DoubleLinkedList(size=" + getSize() + ")";
+        }
     } // method compareTo
 } // class DoubleLinkedList
