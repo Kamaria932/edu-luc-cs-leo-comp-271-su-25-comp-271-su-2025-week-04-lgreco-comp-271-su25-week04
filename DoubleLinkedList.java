@@ -42,7 +42,16 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
     public void add(String value) {
         add(new Node(value)); //this passes a plain string to use as a new value.
     } // method add
-
+/*Count and return the number of nodes in the list. Return the number of nodes*/
+    public int getSize() {
+        int count = 0; //Start at 0.
+        Node current = head; //Go through the list adding 1 for each new node in the list.
+        while (current != null) {
+            count++;
+            current = current.getNext();
+        }
+        return count;                   // Return the total correct count.
+    }
     // implement the comparable interface
     public int compareTo(DoubleLinkedList other) {
 
