@@ -1,10 +1,11 @@
-public class DoubleLinkedList implements Comparable<nfs_DoubleLinkedList> {
+public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
 
     private static final String DEFAULT_NAME = "Whatever";
 
     private String name;
     private Node head;
     private Node tail;
+    private static final int Not_Found = -1; //Try to avoid the magic numbers.
 
     /** Basic constructor */
     public DoubleLinkedList(String name) {
@@ -25,14 +26,17 @@ public class DoubleLinkedList implements Comparable<nfs_DoubleLinkedList> {
         return this.name;
     } // method toString
 
-    /** Add a new node to the linked list */
+    /** Add a new node to the linked list
+     * Make The list be able to point backwards. Update the previous node everytime you add a new node.
+     */
     public void add(Node node) {
         if (this.head == null) {
-            this.head = node;
+            this.head = node; //The first node will become the head.
         } else {
-            this.tail.setNext(node);
+            this.tail.setNext(node); //point to a new node after the current tail.
         }
         this.tail = node;
+    }
     } // method add
 
     // overload method add to add a node by value
