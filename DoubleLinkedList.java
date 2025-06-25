@@ -45,6 +45,6 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
 
     // implement the comparable interface
     public int compareTo(DoubleLinkedList other) {
-        return -1234567;
+
     } // method compareTo
 } // class DoubleLinkedList
