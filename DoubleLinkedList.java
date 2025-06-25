@@ -76,7 +76,9 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
         }
         return result;                  //return the index-based value result.
     }
-    /*true if the list contain value and if not set it to false.*/
+    /*true if the list contain value and if not set it to false.
+     * Boolean contains method.
+    */
      public boolean contains(String value) {
         return indexOf(value) != NOT_FOUND;
     }
