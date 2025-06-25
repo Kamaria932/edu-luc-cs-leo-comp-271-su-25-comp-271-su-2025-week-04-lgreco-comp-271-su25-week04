@@ -53,25 +53,28 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
         }
         return count;                   // Return the total correct count.
     }
+    /*
+     * Write an indexOf method in DoubleLinkedList and return –1 if not found. 
+     */
     public int indexOf(String value) {
-        int position = 0;
+        int position = 0; //zero-based index.
         int result   = NOT_FOUND;
-        Node current = head;
+        Node current = head; 
 
-        while (current != null && result == NOT_FOUND) {
+        while (current != null && result == NOT_FOUND) { //The loop will run as long as there are no more nodes left and there is no match found.
             boolean equal;
-            if (value == null) {
-                equal = current.getValue() == null;
+            if (value == null) { //Checks for null.
+                equal = current.getValue() == null; //This will be true only if the node value is also null.
             } else {
                 equal = value.equals(current.getValue());
             }
             if (equal) {
-                result = position;
+                result = position; //store the position on the current node that was found.
             }
-            current = current.getNext();
+            current = current.getNext(); //Move to the next node.
             position++;
         }
-        return result;                  // one return
+        return result;                  //return the index-based value result.
     }
     // implement the comparable interface
     public int compareTo(DoubleLinkedList other) {
