@@ -1,11 +1,12 @@
 public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
 
     private static final String DEFAULT_NAME = "Whatever";
+    private static final int NOT_FOUND = -1; //Try to avoid the magic numbers.
+
 
     private String name;
     private Node head;
     private Node tail;
-    private static final int Not_Found = -1; //Try to avoid the magic numbers.
 
     /** Basic constructor */
     public DoubleLinkedList(String name) {
@@ -51,6 +52,26 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
             current = current.getNext();
         }
         return count;                   // Return the total correct count.
+    }
+    public int indexOf(String value) {
+        int position = 0;
+        int result   = NOT_FOUND;
+        Node current = head;
+
+        while (current != null && result == NOT_FOUND) {
+            boolean equal;
+            if (value == null) {
+                equal = current.getValue() == null;
+            } else {
+                equal = value.equals(current.getValue());
+            }
+            if (equal) {
+                result = position;
+            }
+            current = current.getNext();
+            position++;
+        }
+        return result;                  // one return
     }
     // implement the comparable interface
     public int compareTo(DoubleLinkedList other) {
