@@ -36,15 +36,15 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
             this.tail.setNext(node); //point to a new node after the current tail.
         }
         this.tail = node;
-    }
     } // method add
 
     // overload method add to add a node by value
     public void add(String value) {
+        add(new Node(value)); //this passes a plain string to use as a new value.
     } // method add
 
     // implement the comparable interface
-    public int compareTo(nfs_DoubleLinkedList other) {
+    public int compareTo(DoubleLinkedList other) {
         return -1234567;
     } // method compareTo
 } // class DoubleLinkedList
