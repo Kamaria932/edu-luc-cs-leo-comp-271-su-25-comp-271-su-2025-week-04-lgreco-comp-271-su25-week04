@@ -45,6 +45,9 @@ public class Node implements BasicGoodBehavior, Comparable<Node> {
         /** Mutator for next */
     public void setNext(Node next) {
         this.next = next;
+        if (next != null) { 
+            next.previous = this; //sets a backward link towards each node.
+        }
     } // method setNext
 
     /** Mutator for previous */

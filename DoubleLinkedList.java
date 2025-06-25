@@ -91,8 +91,4 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
         }
         return diff;
     }
- public String toString() {
-        return "DoubleLinkedList(size=" + getSize() + ")";
-        }
     } // method compareTo
-} // class DoubleLinkedList
