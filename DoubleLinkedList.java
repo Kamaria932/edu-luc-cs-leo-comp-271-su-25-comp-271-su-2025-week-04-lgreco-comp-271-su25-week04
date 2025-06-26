@@ -28,7 +28,7 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
     } // method toString
 
     /** Add a new node to the linked list
-     * Make The list be able to point backwards. Update the previous node everytime you add a new node.
+     * Make The list able to point backwards. Update the previous node everytime you add a new node.
      */
     public void add(Node node) {
         if (this.head == null) {
@@ -45,11 +45,11 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
     } // method add
 /*Count and return the number of nodes in the list. Return the number of nodes*/
     public int getSize() {
-        int count = 0; //Start at 0.
-        Node current = head; //Go through the list adding 1 for each new node in the list.
+        int count = 0; //Intialize counter at 0.
+        Node current = head; //Start at the head node.
         while (current != null) {
-            count++;
-            current = current.getNext();
+            count++; //Add 1 for each new node in the list.
+            current = current.getNext(); //Go through the list.
         }
         return count;                   // Return the total correct count.
     }
@@ -85,10 +85,10 @@ public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
 /* */
     // implement the comparable interface
     public int compareTo(DoubleLinkedList other) {
-            int diff = 0;  // assume they are equal
+            int different = 0;  // assume they are equal
             if (other != null) {  // Check if other is null. If it is do not touch.
-                diff = this.getSize() - other.getSize(); //Difference in total node counts.
+                different = this.getSize() - other.getSize(); //Difference in total node counts.
         }
-        return diff;
+        return different;
     }
     } // method compareTo
